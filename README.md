@@ -1,5 +1,6 @@
 # Client-Server Network Model
 > yo mama so fat, even her ACKs need flow control
+
 This repo is a compact user-space implementation of multiple TCP features built on top of UDP. It has a small sliding-window file-transfer and chat system with simulated packet loss, retransmissions, a three-way handshake (SYN/SYN-ACK/ACK), and graceful teardown (FIN).
 
 - `networking/client.c` — client implementation. Supports file transfer and interactive chat mode. Non-blocking sockets, sliding window sender, retransmissions, and optional logging.
@@ -53,5 +54,6 @@ Protocol and behavior summary
 - File transfer uses a sliding-window sender on the client side with cumulative ACKs sent by the server.
 - Retransmission timeout: controlled by the constant `RETRANSMISSION_TIMEOUT_MS` in `networking.h` (default 500 ms).
 - The server computes and prints an MD5 hash of the received file once transfer completes.
+
 
 
